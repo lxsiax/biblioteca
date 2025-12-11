@@ -15,6 +15,7 @@
                 <td><a href="{{ route('ejemplares.show', $ejemplar) }}">{{ $ejemplar->codigo }}</a></td>
                 @php
                 $prestado = false;
+                //$prestamoActivo = $ejemplar->prestamos->sortByDesc('fecha_hora')->first();
                 $prestamoActivo = $ejemplar->prestamo;
                 if($prestamoActivo){
                     $dias = $prestamoActivo->fecha_hora->diffInDays(now());
